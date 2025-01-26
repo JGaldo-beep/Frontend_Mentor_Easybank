@@ -10,6 +10,7 @@ html {
 }
 
 body {
+  font-weight: 300;
   margin: 0;
   padding: 0;
   font-family: "Public Sans", sans-serif;
@@ -22,7 +23,6 @@ a,
 a:visited,
 a:hover {
   text-decoration: none;
-  color: $grayishBlue;
 }
 
 // Flebox Styles
@@ -45,10 +45,24 @@ a:hover {
 // Buttons
 button,
 .button {
-  padding: 1rem 1.875rem;
+  padding: 0.875rem 1.875rem;
   background: linear-gradient(to right, $limeGreen, $brightCyan);
   border: 0;
   cursor: pointer;
   color: $white;
   border-radius: 50px;
+  font-weight: 400;
+}
+
+// Visibility
+.hide-for-mobile {
+  @include breakpoint-down(medium) {
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  @include breakpoint-up(large) {
+    display: none;
+  }
 }
